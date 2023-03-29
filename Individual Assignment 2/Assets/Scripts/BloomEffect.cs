@@ -8,7 +8,7 @@ public class BloomEffect : MonoBehaviour
     // Start is called before the first frame update
     public Shader bloomShader;
     [Range(1, 16)]
-    public int iterations = 4;
+    public float iterations = 4;
     RenderTexture[] textures = new RenderTexture[16];
 
     [NonSerialized]
@@ -16,6 +16,24 @@ public class BloomEffect : MonoBehaviour
 
     const int boxDownPass = 0;
     const int boxUpPass = 1;
+
+    float time;
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+
+        float t = time / 2.0f;
+        float low = 1.0f;
+        float high = 6.0f;
+        iterations = Mathf.Lerp(low, high, t);
+        
+        if (time >= 5.0f)
+        {
+            time = 0.0f;
+        }
+        time = Mathf.Cos(Time.realtimeSinceStartup) * 0.5f + 0.5f;
+    }
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
