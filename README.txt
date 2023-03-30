@@ -25,7 +25,7 @@ Jaws Scene Recreation:
 *
 *
 Code Snippet 1 Explanation:
-	The first 4 highlighted lines of the code tell me that this is something that is being rendered on to the camera view. The "source.width" and "source.height" applied to the width and height variables suggest this code is gathering the resolution of the viewport. The "RenderTexture" variables and "Graphics.Blit" functions around the code suggest a texture or shader is applied to the camera to change how the scene looks are that something is applied. For instance, if the user wants some sort of texture applied to only certain parts of the scene (lighter areas for example), they would use this code, and this is designated by the decision making in this code.
+	The first 4 highlighted lines of the code tell me that this is something that is being rendered on to the camera view. The "source.width" and "source.height" applied to the width and height variables suggest this code is gathering the resolution of the viewport. The "RenderTexture" variables and "Graphics.Blit" functions around the code suggest a texture or shader is being generated. This texture can be applied to the camera to change how the scene looks are that something is applied. For instance, if the user wants some sort of texture applied to only certain parts of the scene (lighter areas for example), they would use this code, and this is designated by the decision making in this code. This code also includes downsampling through the first for loop and upsampling based on the downsampled render textures.
 *
 *
 *
